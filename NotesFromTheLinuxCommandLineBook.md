@@ -60,6 +60,12 @@ command: whatis
 command: info 
 	displays a programs info entry. An alternative to man pages that are displayed with a reader program called info, and are hyperlinked 
 	like webpages. Syntax is info <command>
+command: cat 
+	Concatenate Files. reads one or more files and copies them to standard output. It is also possible to combine files in this way, 
+	for example if you have a video file split up into different parts. Note that with the following command, it is also possible 
+	to type some quick information into a text file.
+	cat > filename. 
+	Note that this is also using the redirect IO command(>). 
 operation: Redirect IO
 	You can redirect the standard output of a command to a text if you so choose. This can be useful if you want to save some output 
 	information after running a command. You can do this with the > command, followed by where you would like to save the output, like a 
