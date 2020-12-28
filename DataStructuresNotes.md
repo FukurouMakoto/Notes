@@ -389,5 +389,6 @@ The Queues
         While everything operates on constant time for obvious reasons, Contains and removal operate on linear time because you would potentially need to look thru the entire queue to find your item.
     Coding a Breadth First Search. 
         Breadth First Search acts as a way to traverse a graph in which one node visits its adjacent nodes until all the nodes have been visited. 
-    How to enqueue(add) elements to a queue
-    How to dequeue(remove) elements from a queue
+    Implementing queues
+        Queues are popularly implemented using arrays, linked lists and doubly linked lists. Do note that if you are going to be using a static array to make sure you are allocating enough slots for it. 
+        Our first node will have the head and tail pointer at the same node, the only node available, however it changes as we enqueue and dequeue items. As we enqueue, our tail pointer moves forward. Conversely, when we dequeque, our head pointer now moves forward. The previous position which now has no value will then need to have its memory freed in C++ & C# so make note of that. 
