@@ -324,3 +324,70 @@ Complexity Analysis
     Remove at head: O(1)
     Remove at tail: 0(1)
     Remove at middle: 0(n)
+
+The Stack
+
+    What is a stack?
+        A stack is a one-ended linear data structure which models a real world stack by having two primary operations, namely push and pop. 
+        Stacks work off the top, pushing an elements onto the top and popping elements off of it. This behavior is commonly known as LIFO, or Last In First Out. You can think of this as the exact same behavior as the stack from MTG: The last effect to have been done is resolved first. 
+        It is criticial to understand that in a stack you only have power over the TOP ELEMENT IN THE STACK. You cannot change anything off of the most bottom parts of it unless you pop elements off until you reach it. You can only work off the top most element. 
+    When and where is a stack used?
+        Stacks are extremely common and you will find them in many different programs.
+        - Used by undo mechanisms in text editors
+        - Used in compiler syntax checking for matching brackets and braces
+        - Can be used to model a pile of books or plates
+        - Used behind the scenes to support recursion by keeping track of previous function calls
+        - Can be used to do a Depth First Search (DFS) on a graph. 
+    Complexity Analysis
+        Pushing     O(1)
+        Popping     O(1)
+        Peeking     O(1)
+        Searching   O(n)
+        Size        O(1)
+
+        All of the operations in the stack operate on constant time except for searching. This is because the item we are searching for may not necessarily be at the top of the stack which would mean we would have to search thru every single element in the stack to find it. Everything else on the other hand operates on linear time because you are simply manipulating things one at a time.
+    Implementation details
+        The following is pseudo-code explaining some example stack usage for determining whether or not a bracket sequence is valid or invalid. It is valid only when every bracket is closed. 
+        [{}] => valid
+        (()()) => valid
+        {] => invalid
+        [()]))() => invalid
+        []{}({}) => valid 
+
+        Let S be a stack
+        For bracket in bracket_string:
+            rev = getReversedBracket(bracket)
+            if isLeftBracket(bracket):
+                S.push(bracket)
+            else if S.isEmpty() or S.pop() != rev:
+                return false //Invalid
+        return S.isEmpty() //valid if s is empty
+    pushing elements on stack
+    popping elements from stack
+
+The Queues
+
+    What is a queue?
+        A queue is a linear data structure which models real world queues by having two primary operations, namely enqueue and dequeue. 
+        All queues have a front and a back, and items are added from the back and removed from the front. They simulate real life queues and an easy way to think about them is to think of a line for a movie.
+    Terminology
+        There isn't any consistency in regards to the terminology for queues across languages. Enqueue can also be called adding or offering, and dequeing can also be called removing or polling. 
+    When and where is a queue used?
+        - Any waiting line models a queue, for example a lineup for a movie.
+        - Can be used to efficiently keep track of the x most recently added elements.
+        - Web server request management where you want first come first serve.
+        - breadth first search (BFS) graph traversal.
+    Complexity Analysis
+        Enqueue     O(1)
+        Dequeue     O(1)
+        Peeking     O(1)
+        Contains    O(n)
+        Removal     O(n)
+        Is Empty    O(1)
+        Note that peeking is an operation for seeing the elements in the queue. 
+        Contains is to check if the item is in the queue.
+        While everything operates on constant time for obvious reasons, Contains and removal operate on linear time because you would potentially need to look thru the entire queue to find your item.
+    Coding a Breadth First Search. 
+        Breadth First Search acts as a way to traverse a graph in which one node visits its adjacent nodes until all the nodes have been visited. 
+    How to enqueue(add) elements to a queue
+    How to dequeue(remove) elements from a queue
