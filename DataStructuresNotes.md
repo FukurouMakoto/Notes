@@ -394,4 +394,35 @@ The Queues
         Our first node will have the head and tail pointer at the same node, the only node available, however it changes as we enqueue and dequeue items. As we enqueue, our tail pointer moves forward. Conversely, when we dequeque, our head pointer now moves forward. The previous position which now has no value will then need to have its memory freed in C++ & C# so make note of that. 
 
 Priority Queues (PQ's) with an interlude on heaps
-    
+
+What is a Priority Queue?
+    A Abstract Data Type that oeprates simialr to a normal queue except that each element has a certain priority. The priority of the leements in the priority queue determine the order in which telements are removed from the PQ.
+    Only supports comparable data, meaning the data inserted into the priority queue must be able to be ordered in some way either from least to greatest or greatest to least. This is so that we are able to assign relative priorities to each element.
+    Note that it is not normal to be able to get an ordered list using a priority queue. All that is guaranteed is that the next item that will be pulled from it will be in sequence with the last item pulled. 
+    Priority Queues utilize heaps for their functionality.
+What is a heap?
+    A tree based DS that satisfies the heap invariant (or heap property): If A is a parent node of B then A is ordered with respect to B for all nodes A, B in the heap. In laymans terms, this means that if A is a parent of B, then A will always have a higher or lower value than its children, depending on whether your heap or a min or max heap. A min heap ensures the parent is always the lowest value in the tree, and a max heap ensures the opposite.
+    Heaps are also binary trees, meaning that every parent only has two children. 
+When & Where is a PQ used?
+    Used in certain implementations of Dijkstra's Shortest Path algorithm. 
+    Anytime you need to dynamically fetch the 'next best' or 'next worst' element
+    Used in Huffman coding (often used for lossless data compression)
+    Best First Search Algorithms such as A* use PQ's to continuously grab the next most promising node. 
+    Used by Minimum Spanning Tree (MST) algorithms.
+How to turn a Min PQ into a Max PQ?
+Complexity Analysis
+    Complexity of PQ with binary heap
+        Binary Heap Construction    O(n)
+        Polling                     O(log(n))
+        Peeking                     O(1)
+        Adding                      O(log(n))
+        Polling and Adding take logarithmic time because you may have to reshuffle the heap to bubble up its values.
+        Naive Removing                                  O(n)
+        Advancing removing with help from a hash table  O(log(n))
+        Naive Contains                                  O(n)
+        Contains check with help of a hash table        O(1)
+        The Naive implementations involve doing a linear scan to find the element and then remove it, which obviously can take some time depending on the size. You can implement help with a hash table to make this faster but doing so can take up linear space and adds some overhead.
+Binary Heap PQ Implementation Details
+Heap sinking and swimming
+Adding elements to a PQ
+Removing elements from PQ
