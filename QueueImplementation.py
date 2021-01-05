@@ -1,8 +1,6 @@
 class Queue:
     def __init__(self):
         self.QueueList = []
-        #self.front = self.QueueList[0]
-        #self.back = self.QueueList[-1]
 
     #Is queue empty?
     def is_empty(self):
