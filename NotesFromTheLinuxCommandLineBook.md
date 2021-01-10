@@ -66,6 +66,21 @@ command: cat
 	to type some quick information into a text file.
 	cat > filename. 
 	Note that this is also using the redirect IO command(>). 
+command: uniq 
+	Often used in conjunction with sort. Accepts a sorted list of data from either standard input or a single filename argument. 
+	Defaults to removing duplicates from the list. Can pass the -d flag to do the inverse and only display duplicates.
+command: wc 
+	Used to display the number of lines, words, and bytes (in that order) contained in a file. 
+	Can pass a -l flag to only report lines. 
+command: grep 
+	Finds text patterns within files. Prints out the lines containing the pattern passed into it. Can also use regex. Often used with pipes. 
+	Can also pass the -i flag which will ignore case when performing the search. 
+	Can also pass the -v which only prints the lines that do not match the pattern thrown in. 
+command: head/tail 
+	Returns the first and last 10 lines from any command. You can call this on a text document to show only the lines in it or on a command.
+	Can also be used with grep and pipes. 
+command: tee
+	reads standard input and copies it to both standard input and to one or more files. Allows you to capture a pipelines contents 
 operation: Redirect IO
 	You can redirect the standard output of a command to a text if you so choose. This can be useful if you want to save some output 
 	information after running a command. You can do this with the > command, followed by where you would like to save the output, like a 
